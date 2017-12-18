@@ -64,7 +64,7 @@ public void deleteContact(String name){
             new ArrayList<ContentProviderOperation>();
 
     // Builds the operation and delete it to the array of operations
-    ops.add(ContentProviderOperation.newUpdate(ContactsContract.Data.CONTENT_URI)
+    ops.add(ContentProviderOperation.newDelete(ContactsContract.Data.CONTENT_URI)
             .withSelection(where,params)
 
                        // Builds the operation and adds it to the array of operations
