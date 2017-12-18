@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mname,mphone;
     Button mdeletecontact,mview;
-    TextView mdisplay;
+   
 
 
     @Override
