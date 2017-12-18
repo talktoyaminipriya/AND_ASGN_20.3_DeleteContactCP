@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//calling views
+        
         mname = (EditText)findViewById(R.id.name);
         mphone = (EditText)findViewById(R.id.phone);
         mdeletecontact = (Button) findViewById(R.id.deletecontact);
@@ -35,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //getting values from edit text
                 String name = mname.getText().toString();
 
+                //validating if edit text has text or balnk
                 if(name.equals("")){
 
                     Toast.makeText(getApplicationContext(),"Fields are empty",Toast.LENGTH_SHORT).show();
@@ -49,15 +52,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 public void deleteContact(String name){
+    
+    // getting content resolver to get data from content provider
 
     ContentResolver cr = getContentResolver();
     String where = ContactsContract.Data.DISPLAY_NAME+" = ? ";
     String[] params = new String[] {name};
 
+    // Creates a new array of ContentProviderOperation objects.
     ArrayList<ContentProviderOperation> ops =
             new ArrayList<ContentProviderOperation>();
 
-    // Builds the operation and update it to the array of operations
+    // Builds the operation and delete it to the array of operations
     ops.add(ContentProviderOperation.newUpdate(ContactsContract.Data.CONTENT_URI)
             .withSelection(where,params)
 
