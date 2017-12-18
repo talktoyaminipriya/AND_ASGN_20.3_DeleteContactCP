@@ -13,16 +13,11 @@
         android:layout_height="wrap_content"
         android:hint="Name"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:id="@+id/phone"/>
 
     <Button
         android:id="@+id/Deletecontact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Contact"/>
+        android:text="Delete Contact"/>
 
 </LinearLayout>
